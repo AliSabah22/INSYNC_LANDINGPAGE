@@ -91,22 +91,18 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-zinc-900">
-      <div className="container mx-auto px-4">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Our Clients Say
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Real results from real clients. See how we've transformed businesses across industries.
-          </p>
-        </motion.div>
+    <div className="container mx-auto px-4">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          Real results from real clients. See how we've transformed businesses across industries.
+        </p>
+      </motion.div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Testimonial Display */}
@@ -227,7 +223,6 @@ export default function TestimonialsCarousel() {
             Book Your Free Strategy Call
           </button>
         </motion.div>
-      </div>
-    </section>
+    </div>
   )
 }

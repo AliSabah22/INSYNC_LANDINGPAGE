@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 export default function StickyNavigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,7 +27,7 @@ export default function StickyNavigation() {
   }
 
   const navItems = [
-    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Services', id: 'services' },
     { name: 'Testimonials', id: 'testimonials' },
     { name: 'Contact', id: 'contact' },
@@ -46,26 +47,40 @@ export default function StickyNavigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <motion.div 
-            className="text-2xl md:text-3xl font-bold text-royal-600"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            INSYNC
-          </motion.div>
+          <Link href="/">
+            <motion.div 
+              className="text-2xl md:text-3xl font-bold text-royal-600 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              INSYNC
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.button
-                key={item.name}
-                onClick={() => scrollToSection(item.id)}
-                className="text-white hover:text-royal-400 transition-colors duration-200 font-medium"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.name}
-              </motion.button>
+              item.href ? (
+                <Link key={item.name} href={item.href}>
+                  <motion.button
+                    className="text-white hover:text-royal-400 transition-colors duration-200 font-medium"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.name}
+                  </motion.button>
+                </Link>
+              ) : (
+                <motion.button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id!)}
+                  className="text-white hover:text-royal-400 transition-colors duration-200 font-medium"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.name}
+                </motion.button>
+              )
             ))}
           </div>
 
@@ -108,13 +123,24 @@ export default function StickyNavigation() {
             >
               <div className="py-6 space-y-4">
                 {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-white hover:text-royal-400 transition-colors duration-200 px-4 py-2 font-medium"
-                  >
-                    {item.name}
-                  </button>
+                  item.href ? (
+                    <Link key={item.name} href={item.href}>
+                      <button
+                        className="block w-full text-left text-white hover:text-royal-400 transition-colors duration-200 px-4 py-2 font-medium"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </button>
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.name}
+                      onClick={() => scrollToSection(item.id!)}
+                      className="block w-full text-left text-white hover:text-royal-400 transition-colors duration-200 px-4 py-2 font-medium"
+                    >
+                      {item.name}
+                    </button>
+                  )
                 ))}
                 <div className="pt-4 border-t border-royal-600/30 space-y-3 px-4">
                   <Button

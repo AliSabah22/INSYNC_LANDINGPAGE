@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-<<<<<<< HEAD
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from 'react-hot-toast'
 
@@ -56,13 +55,6 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
-=======
-
-export const metadata: Metadata = {
-  title: 'INSYNC PRODUCTIONS',
-  description: 'Created with v0',
-  generator: 'v0.dev',
->>>>>>> 33bf567da42aa64851edd3f0beb38c2f05766af0
 }
 
 export default function RootLayout({
@@ -71,7 +63,6 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-<<<<<<< HEAD
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
@@ -115,10 +106,6 @@ export default function RootLayout({
           />
         </ThemeProvider>
       </body>
-=======
-    <html lang="en">
-      <body>{children}</body>
->>>>>>> 33bf567da42aa64851edd3f0beb38c2f05766af0
     </html>
   )
 }

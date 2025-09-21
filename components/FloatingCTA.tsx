@@ -36,9 +36,9 @@ export default function FloatingCTA() {
   }
 
   const scrollToCalendly = () => {
-    const calendlySection = document.getElementById('calendly')
-    if (calendlySection) {
-      calendlySection.scrollIntoView({ behavior: 'smooth' })
+    const contactSection = document.getElementById('contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
       setIsExpanded(false)
     }
   }
