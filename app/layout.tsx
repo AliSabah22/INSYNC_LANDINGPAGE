@@ -3,11 +3,12 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from 'react-hot-toast'
 import { Analytics } from '@vercel/analytics/next'
+import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'INSYNC - Premium Content Creation & Lead Generation',
-  description: 'Scale your business with our proven content creation and lead generation strategies. From YouTube mastery to full-service content production, we help entrepreneurs generate qualified leads and scale to $1M+/Year.',
-  keywords: 'content creation, lead generation, video production, YouTube marketing, content strategy, business growth',
+  title: 'INSYNC Productions - Video Marketing Agency Mississauga | GTA Content Creation',
+  description: 'Leading video production and content marketing agency in Mississauga, Ontario. Serving GTA businesses with YouTube marketing, social media content, and lead generation strategies. Scale your business with proven content creation.',
+  keywords: 'video production Mississauga, content marketing GTA, YouTube marketing Toronto, social media agency Ontario, video marketing agency Mississauga, content creation Toronto, lead generation GTA, video production Brampton, content marketing Vaughan, digital marketing Mississauga',
   authors: [{ name: 'INSYNC Productions' }],
   creator: 'INSYNC Productions',
   publisher: 'INSYNC Productions',
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'INSYNC - Premium Content Creation & Lead Generation',
-    description: 'Scale your business with our proven content creation and lead generation strategies. Generate qualified leads and scale to $1M+/Year.',
+    title: 'INSYNC Productions - Video Marketing Agency Mississauga | GTA Content Creation',
+    description: 'Leading video production and content marketing agency in Mississauga, Ontario. Serving GTA businesses with proven content creation and lead generation strategies.',
     url: 'https://insyncproductions.com',
     siteName: 'INSYNC Productions',
     images: [
@@ -30,16 +31,16 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'INSYNC - Content Creation & Lead Generation',
+        alt: 'INSYNC Productions - Video Marketing Agency Mississauga GTA',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_CA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'INSYNC - Premium Content Creation & Lead Generation',
-    description: 'Scale your business with our proven content creation and lead generation strategies.',
+    title: 'INSYNC Productions - Video Marketing Agency Mississauga | GTA Content Creation',
+    description: 'Leading video production and content marketing agency in Mississauga, Ontario. Serving GTA businesses.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -73,6 +74,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <StructuredData />
       </head>
       <body className="antialiased">
         <ThemeProvider

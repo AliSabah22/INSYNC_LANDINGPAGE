@@ -112,14 +112,14 @@ export default function Page() {
           <Suspense fallback={<div className="h-16 bg-zinc-800 animate-pulse rounded mb-6"></div>}>
             <ScrollAnimationLite>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 sm:mb-8">
-                Data-Driven Video Production That Converts.
+                GTA's Premier Video Production Agency That Converts.
             </h1>
             </ScrollAnimationLite>
           </Suspense>
           <Suspense fallback={<div className="h-8 bg-zinc-800 animate-pulse rounded mb-8 max-w-4xl mx-auto"></div>}>
             <ScrollAnimationLite delay={0.2}>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed">
-                We create with intention to get you results on social media, ads, and YouTube.
+                Serving Mississauga, Toronto, and the entire GTA with data-driven video production that gets results on social media, ads, and YouTube.
               </p>
             </ScrollAnimationLite>
           </Suspense>
@@ -203,7 +203,7 @@ export default function Page() {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimationLite>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16">
-              Our Services
+              Video Production Services for GTA Businesses
             </h2>
           </ScrollAnimationLite>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
@@ -434,12 +434,38 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Local Business Section */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-zinc-900">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollAnimationLite>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16">
+              Serving the Greater Toronto Area
+            </h2>
+          </ScrollAnimationLite>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { city: "Mississauga", description: "Our home base - serving local businesses with premium video production" },
+              { city: "Toronto", description: "Downtown and surrounding areas - comprehensive content marketing solutions" },
+              { city: "Brampton", description: "Growing businesses with scalable video marketing strategies" },
+              { city: "Vaughan", description: "Professional video production for established enterprises" }
+            ].map((location, index) => (
+              <ScrollAnimationLite key={index} delay={index * 0.1}>
+                <div className="text-center p-6 bg-black rounded-lg border border-royal-600/30">
+                  <h3 className="text-xl font-bold mb-3 text-royal-600">{location.city}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{location.description}</p>
+                </div>
+              </ScrollAnimationLite>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimationLite>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16">
-              About INSYNC Productions
+              About INSYNC Productions - Mississauga's Video Marketing Experts
             </h2>
           </ScrollAnimationLite>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
@@ -447,10 +473,10 @@ export default function Page() {
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-royal-600">Our Story</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Founded by content creators who understand the struggle of building an audience from scratch, INSYNC Productions was born from a simple belief: every business deserves content that converts.
+                  Based in Mississauga, Ontario, INSYNC Productions was founded by content creators who understand the unique needs of GTA businesses. We believe every business in the Greater Toronto Area deserves content that converts and drives real results.
                 </p>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  We've worked with over 200+ entrepreneurs, helping them generate millions in revenue through strategic content creation and lead generation systems.
+                  We've worked with over 200+ entrepreneurs across Mississauga, Toronto, Brampton, Vaughan, and the entire GTA, helping them generate millions in revenue through strategic content creation and lead generation systems.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
